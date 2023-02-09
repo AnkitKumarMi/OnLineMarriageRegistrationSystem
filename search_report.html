@@ -1,0 +1,73 @@
+{% extends 'navigation.html' %}
+{% block body %}
+{% load static %}
+<div class="container" style="padding:1%;background-color:White;border-radius:10px;width:90%;margin-top:4%;">
+<h3 style="font-weight:bold;margin-top:2%;margin-bottom:3%;color:grey">Search Marriage Application Between Dates</h3>
+    <form method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Enter First date<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="date" style="width:100%;padding:5px" name="date1">
+    </div>
+    </div>
+
+    <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Enter Last date<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="date" style="width:100%;padding:5px" name="date2">
+    </div>
+    </div>
+        <div align="center">
+        <button type="submit" class="btn btn-dark" style="height:45px;margin-top:2%;width:25%;float:center">
+            <i class="fa fa-search"></i> search</button>
+</div>
+    </form>
+    <hr>
+    {% ifequal terror "found" %}
+    <div class="container" style="margin-top:%;background:white;width:100%;height:88%">
+<center><h2 style = "margin-top:2%;padding:15px;font-family : 'Monotype Corsiva' ; color : #E6120E ; font-weight : bold;margin-top:5%">View Registration Application</h2></center><hr>
+
+<table class="table table-bordered" id="myTable">
+  <thead>
+  <tr>
+    <th>Sr. No</th>
+    <th>Reg. Number</th>
+    <th>Husband name</th>
+    <th>Date of Marriage</th>
+    <th>status</th>
+    <th style="width:150px">Action</th>
+  </tr>
+  </thead>
+   <tbody>
+{% ifequal error "notfound" %}
+<p align="center" style="color:#180f3d;font-weight:bold;font-size:30px"> !!! Data Not Found !!!</p>
+{% else %}
+{% for i in reg %}
+  <tr>
+      <td>{{forloop.counter}}</td>
+    <td>{{i.u_id}}</td>
+    <td>{{i.husband.name}}</td>
+    <td>{{i.marriage_date}}</td>
+    <td>{{i.status.status}}</td>
+    <td><a href="{% url 'registration_detail' i.id %}"> <i class='fa fa-eye' style='font-size:30px;color:red'></i></a></td>
+  </tr>
+{% endfor %}
+   {% endifequal %}
+
+    </tbody>
+</table>
+
+ </div>
+    {% endifequal %}
+    </div>
+<style>
+td{
+font-size:15px;
+    }
+</style>
+  {% endblock %}

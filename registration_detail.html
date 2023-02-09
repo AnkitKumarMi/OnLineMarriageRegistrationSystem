@@ -1,0 +1,165 @@
+{% extends 'navigation.html' %}
+{% block body %}
+<style>
+.sec{
+padding:10px;
+background:#e3fcb6;
+    font-weight:bold;
+    font-size:17px;
+    border:1px solid grey;
+}
+.sec1{
+padding:10px;
+background:#e3fcb6;
+    border:1px solid grey;
+    font-size:17px;
+    color:grey;
+}
+.sec2{
+
+padding:10px;
+    border:1px solid grey;
+}
+</style>
+
+<div class="container" style="padding:30px;background:white;width:100%;height:88%">
+    {% if request.user.is_staff %}
+<center><h2 style = "margin-top:0%;padding:15px;padding-top:0;font-family : 'Monotype Corsiva' ; color : #E6120E ; font-weight : bold;margin-top:5%">View Registration Detail</h2></center><hr>
+    {% else %}
+<center><h1 style = "font-size:80px;margin-top:0%;padding:15px;padding-top:0;font-family : 'Monotype Corsiva' ; color : Blue ; font-weight : bold;margin-top:5%">Marriage Certificate</h1></center><hr>
+    {% endif %}
+<div class="row" align="center" style="color:red;font-weight:bold">
+    <div class="col-md-12 sec2" style="border:1px solid grey;background:#00d644" >Registration Number : {{data.u_id}}</div>
+</div>
+
+<div class="row" align="center" style="color:black;font-weight:bold;background:#d62e00">
+    <div class="col-md-12 sec2">User Detail</div>
+</div>
+
+<div class="row">
+    <div class="col-md-1 sec">First Name</div>
+    <div class="col-md-2 sec1">{{data.user.user.first_name}}</div>
+    <div class="col-md-1 sec">Last name</div>
+    <div class="col-md-2 sec1">{{data.user.user.last_name}}</div>
+    <div class="col-md-1 sec">Mobile</div>
+    <div class="col-md-2 sec1">{{data.user.contact}}</div>
+    <div class="col-md-1 sec">Address</div>
+    <div class="col-md-2 sec1">{{data.user.address}}</div>
+</div>
+
+<div class="row" align="center" style="color:blue;font-weight:bold;background:#04c9bf">
+    <div class="col-md-12 sec2">Application Detail</div>
+</div>
+
+<div class="row" style="color:red;font-weight:bold">
+    <div class="col-md-12 sec2">Date of Marriage : {{data.u_id}}</div>
+</div>
+
+<div class="row" style="color:red;font-weight:bold;background:#eda807">
+    <div class="col-md-12 sec2">Husband Details</div>
+</div>
+<div class="row">
+    <div class="col-md-10">
+    <div class="row">
+    <div class="col-md-1 sec" style="padding:20px">Name</div>
+    <div class="col-md-2 sec1">{{data.husband.name}}</div>
+    <div class="col-md-1 sec">Religion</div>
+    <div class="col-md-1 sec1">{{data.husband.religion}}</div>
+    <div class="col-md-1 sec">Birth</div>
+    <div class="col-md-2 sec1">{{data.husband.dob}}</div>
+    <div class="col-md-1 sec">Address</div>
+    <div class="col-md-3 sec1">{{data.husband.address}}</div>
+    </div>
+    <div class="row">
+    <div class="col-md-1 sec">Marital status</div>
+    <div class="col-md-2 sec1">{{data.husband.marrital}}</div>
+    <div class="col-md-1 sec">Zip code</div>
+    <div class="col-md-1 sec1">{{data.husband.zipcode}}</div>
+    <div class="col-md-1 sec">State</div>
+    <div class="col-md-2 sec1">{{data.husband.state}}</div>
+    <div class="col-md-1 sec">Aadhar Number</div>
+    <div class="col-md-3 sec1">{{data.husband.adhar}}</div>
+    </div>
+    </div>
+    <div class="col-md-2 sec1">
+        <img src="{{data.husband.image.url}}" style="width:90%;height:110px">
+    </div>
+</div>
+
+
+<div class="row" style="color:black;font-weight:bold;background:#8207ed">
+    <div class="col-md-12 sec2">Wife Details</div>
+</div>
+<div class="row">
+    <div class="col-md-10">
+    <div class="row">
+    <div class="col-md-1 sec" style="padding:20px">Name</div>
+    <div class="col-md-2 sec1">{{data.wife.name}}</div>
+    <div class="col-md-1 sec">Religion</div>
+    <div class="col-md-1 sec1">{{data.wife.religion}}</div>
+    <div class="col-md-1 sec">Birth</div>
+    <div class="col-md-2 sec1">{{data.wife.dob}}</div>
+    <div class="col-md-1 sec">Address</div>
+    <div class="col-md-3 sec1">{{data.wife.address}}</div>
+</div>
+<div class="row">
+    <div class="col-md-1 sec">Marital status</div>
+    <div class="col-md-2 sec1">{{data.wife.marrital}}</div>
+    <div class="col-md-1 sec">Zip code</div>
+    <div class="col-md-1 sec1">{{data.wife.zipcode}}</div>
+    <div class="col-md-1 sec">State</div>
+    <div class="col-md-2 sec1">{{data.wife.state}}</div>
+    <div class="col-md-1 sec">Aadhar Number</div>
+    <div class="col-md-3 sec1">{{data.wife.adhar}}</div>
+</div>
+    </div>
+    <div class="col-md-2 sec1">
+        <img src="{{data.wife.image.url}}" style="width:90%;height:110px">
+    </div>
+</div>
+<div class="row" style="color:black;font-weight:bold;background:#0456c9">
+    <div class="col-md-12 sec2">Witness Details</div>
+</div>
+
+    <div class="row">
+        <div class="col-md-2 sec">S. No.</div>
+        <div class="col-md-2 sec">Witness Name</div>
+        <div class="col-md-8 sec">Witness Address</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 sec1">1</div>
+        <div class="col-md-2 sec1">{{data.witness.name1}}</div>
+        <div class="col-md-8 sec1">{{data.witness.address1}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 sec1">2</div>
+        <div class="col-md-2 sec1">{{data.witness.name2}}</div>
+        <div class="col-md-8 sec1">{{data.witness.address2}}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2 sec1">3</div>
+        <div class="col-md-2 sec1">{{data.witness.name3}}</div>
+        <div class="col-md-8 sec1">{{data.witness.address3}}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 sec">Order Final Status</div>
+        <div class="col-md-3 sec1">{{data.status.status}}</div>
+        <div class="col-md-3 sec">Admin Remark</div>
+        <div class="col-md-3 sec1">{{data.remark}}</div>
+    </div>
+    {% if request.user.is_staff %}
+    {% ifnotequal data.status.status "Accept" %}
+<div align="center" style="margin-top:4%">
+    <a href="{% url 'assign_status' data.id %}"><button class="btn btn-primary">Take Action</button></a>
+    </div>
+    {% endifnotequal %}
+    {% else %}
+    <div align="center" style="margin-top:4%">
+    <a href="{% url 'get_invoice' data.id %}"><button class="btn btn-primary">Print</button></a>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

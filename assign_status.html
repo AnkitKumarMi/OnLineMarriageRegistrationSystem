@@ -1,0 +1,41 @@
+{% extends 'navigation.html' %}
+{% block body %}
+{% load static %}
+<div class="container" style="padding:1%;background-color:White;border-radius:10px;width:90%;margin-top:4%;">
+<h3 style="font-weight:bold;margin-top:2%;margin-bottom:3%;color:grey">Assign Status</h3>
+    <form method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Remark<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="remark">
+    </div>
+    </div>
+
+    <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold"> Select Status <span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <select name="status" style="padding:10px;width:100%">
+            <option>-----select status------</option>
+            <option value="Accept">Accept</option>
+            <option value="Reject">Reject</option>
+        </select>
+    </div>
+        </div>
+        <div align="center">
+        <button type="submit" class="btn btn-dark" style="height:45px;margin-top:2%;width:25%;float:center">
+            <i class="fa fa-search"></i> Submit</button>
+</div>
+    </form>
+</div>
+{% if error %}
+<script>
+    alert('Assigned successfully');
+    window.location = "{% url 'registration_detail' data.id %}";
+</script>
+{% endif %}
+{% endblock %}

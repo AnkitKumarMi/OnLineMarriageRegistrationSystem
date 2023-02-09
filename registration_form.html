@@ -1,0 +1,267 @@
+{% extends 'navigation.html' %}
+{% block body %}
+{% load static %}
+<div class="container" style="padding:1%;background-color:White;border-radius:10px;width:90%;margin-top:4%;">
+<h3 style="font-weight:bold;margin-top:2%;margin-bottom:3%;color:grey">Registration Form</h3>
+    <form method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Date of Marriage<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="date" style="width:100%;padding:5px" name="date1" required>
+    </div>
+    </div>
+
+        <p style="color:red;font-weight:bold">1 Husband Detail</p><hr>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Name of Husband<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="h_name" placeholder="Enter Husband Name">
+    </div>
+        </div>
+
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Photo<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="file" style="width:100%;padding:5px" name="image">
+    </div>
+        </div>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Religion<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="rel1" placeholder="Enter Your religion">
+    </div>
+        </div>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Date of Birth<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="date" style="width:100%;padding:5px" name="h_date" placeholder="Enter Husband Name">
+    </div>
+        </div>
+
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Marital Status Before Marriage<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <select name="marital" style="padding:10px;width:100%">
+            <option>-----select your marital status------</option>
+            <option value="Bachelor">Bachelor</option>
+            <option value="Married">Married</option>
+            <option value="Divorce">Divorce</option>
+            <option value="Widower">Widower</option>
+        </select>
+    </div>
+        </div>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Address<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="h_add" placeholder="Enter Your Full Adress">
+    </div>
+        </div>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Zip Code<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="h_zip" placeholder="Enter Your Area Zip code">
+    </div>
+        </div>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">State<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="h_state" placeholder="Enter Your State">
+    </div>
+        </div>
+
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Aadhar Number<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="h_adhar" placeholder="Enter Your Aadhar number">
+    </div>
+        </div>
+
+ <p style="color:red;font-weight:bold">2 Wife Detail</p><hr>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Name of Wife<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="w_name" placeholder="Enter Wife Name">
+    </div>
+        </div>
+
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Photo<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="file" style="width:100%;padding:5px" name="w_image">
+    </div>
+        </div>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Religion<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="rel2" placeholder="Enter Your religion">
+    </div>
+        </div>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Date of Birth<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="date" style="width:100%;padding:5px" name="w_date" placeholder="Enter Husband Name">
+    </div>
+        </div>
+
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Marital Status Before Marriage<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <select name="w_marital" style="padding:10px;width:100%">
+            <option>-----select your marital status------</option>
+            <option value="Bachelor">Bachelor</option>
+            <option value="Married">Married</option>
+            <option value="Divorce">Divorce</option>
+            <option value="Widower">Widower</option>
+        </select>
+    </div>
+        </div>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Address<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="w_add" placeholder="Enter Your Full Adress">
+    </div>
+        </div>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Zip Code<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="w_zip" placeholder="Enter Your Area Zip code">
+    </div>
+        </div>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">State<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="w_state" placeholder="Enter Your State">
+    </div>
+        </div>
+
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Aadhar Number<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="w_adhar" placeholder="Enter Your Aadhar number">
+    </div>
+        </div>
+<p style="color:red;font-weight:bold">3 Witness Detail</p><hr>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">First Witness Name<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="wit_name1" placeholder="Enter Witness Name">
+    </div>
+        </div>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Address<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="wit_add1" placeholder="Enter  Address">
+    </div>
+        </div><hr>
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Second Witness Name<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="wit_name2" placeholder="Enter Witness Name">
+    </div>
+        </div>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Address<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="wit_add2" placeholder="Enter  Address">
+    </div>
+        </div><hr>
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">First Witness Name<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="wit_name3" placeholder="Enter Witness Name">
+    </div>
+        </div>
+
+        <div class="row" style="margin-bottom:2%">
+    <div class="col-md-4">
+        <span style="font-type:bold">Address<span style="color:red">*</span></span>
+    </div>
+    <div class="col-md-8">
+        <input type="text" style="width:100%;padding:5px" name="wit_add3" placeholder="Enter  Address">
+    </div>
+        </div><hr>
+
+
+  <button type="submit" class="btn btn-dark" style="height:45px;margin-top:2%;width:100%">SUBMIT</button>
+</form>
+    </div>
+  </div>
+{% if error %}
+<script>
+    alert("Registration Successful");
+    window.location = "{% url 'view_registration' %}";
+</script>
+{% endif %}
+
+
+{% endblock %}

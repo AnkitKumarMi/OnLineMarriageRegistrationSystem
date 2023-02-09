@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice</title>
+</head>
+<style>
+    th{
+    color:green;
+    text-align:left;
+    font-size:15px;
+    }
+    td{
+    text-align:left;
+    font-size:15px;
+    }
+    lable{
+font-size:35px;
+    }
+</style>
+<body>
+<table>
+    <thead>
+    <tr>
+<td style = "float:center;color:blue;font-weight:bold;font-size:30px" align="center">Certificate of Marriage</td>
+</tr>
+    </thead>
+</table><hr>
+<div class="container">
+    <h1 style = "font-family : 'Monotype Corsiva' ; color : #E6120E ; font-weight : bold;margin-top:3%;font-size:16px" align="center">Registration Number : {{pro.u_id}}</h1><hr>
+
+<div style="width:900px">
+    <table border="1" style="padding:8px">
+        <tr>
+            <td style="color:red;font-weight:bold"align="center" colspan="4">Husband Details</td>
+        </tr>
+        <tr>
+        <th>Name</th>
+        <td>{{pro.husband.name}}</td>
+        <th>Resident at</th>
+        <td>{{pro.husband.address}}</td>
+        </tr>
+
+        <tr>
+        <th>Date of Birth</th>
+        <td>{{pro.husband.dob}}</td>
+        <th>Aadhar Number</th>
+        <td>{{pro.husband.adhar}}</td>
+        </tr>
+
+        <tr>
+        <th>Marrital Status</th>
+        <td>{{pro.husband.marrital}}</td>
+        <th>Religion</th>
+        <td>{{pro.husband.religion}}</td>
+        </tr>
+
+        <tr>
+        <th>Zipcode</th>
+        <td>{{pro.husband.zipcode}}</td>
+        <th>State</th>
+        <td>{{pro.husband.state}}</td>
+        </tr>
+
+    </table>
+</div>
+<div style="width:900px">
+    <table border="1" style="padding:10px">
+        <tr>
+            <td style="color:red;font-weight:bold"align="center" colspan="4">Wife Details</td>
+        </tr>
+        <tr>
+        <th>Name</th>
+        <td>{{pro.wife.name}}</td>
+        <th>Resident at</th>
+        <td>{{pro.wife.address}}</td>
+        </tr>
+
+        <tr>
+        <th>Date of Birth</th>
+        <td>{{pro.wife.dob}}</td>
+        <th>Aadhar Number</th>
+        <td>{{pro.wife.adhar}}</td>
+        </tr>
+
+        <tr>
+        <th>Marrital Status</th>
+        <td>{{pro.wife.marrital}}</td>
+        <th>Religion</th>
+        <td>{{pro.wife.religion}}</td>
+        </tr>
+
+        <tr>
+        <th>Zipcode</th>
+        <td>{{pro.wife.zipcode}}</td>
+        <th>State</th>
+        <td>{{pro.wife.state}}</td>
+        </tr>
+
+    </table>
+</div>
+
+    <div style="width:900px">
+    <table border="1" style="padding:10px">
+        <tr>
+            <td style="color:red;font-weight:bold"align="center" colspan="4">Witness Details</td>
+        </tr>
+        <tr>
+        <th>Sr. No.</th>
+        <th colspan="2">Witness name</th>
+        <th>Witness Address</th>
+        </tr>
+
+        <tr>
+        <td>1.</td>
+        <td colspan="2">{{pro.witness.name1}}</td>
+        <td>{{pro.witness.address1}}</td>
+        </tr>
+
+        <tr>
+        <td>2.</td>
+        <td colspan="2">{{pro.witness.name2}}</td>
+        <td>{{pro.witness.address2}}</td>
+        </tr>
+
+        <tr>
+        <td>3.</td>
+        <td colspan="2">{{pro.witness.name3}}</td>
+        <td>{{pro.witness.address3}}</td>
+        </tr>
+
+    </table>
+
+</div>
+</div>
+
+</body>
+</html>
